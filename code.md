@@ -1,5 +1,33 @@
 
-## All files
+# Table of Contents
+
+<!--toc:start-->
+- [Table of Contents](#table-of-contents)
+- [All files](#all-files)
+- [Code](#code)
+  - [src/main.c](#srcmainc)
+  - [src/hashmap.h](#srchashmaph)
+  - [src/hashmap.c](#srchashmapc)
+  - [src/helpers.h](#srchelpersh)
+  - [src/helpers.c](#srchelpersc)
+  - [src/keyvalue.h](#srckeyvalueh)
+  - [src/keyvalue.c](#srckeyvaluec)
+  - [src/linked_list.h](#srclinkedlisth)
+  - [src/linked_list.c](#srclinkedlistc)
+  - [src/operation.h](#srcoperationh)
+  - [src/operation.c](#srcoperationc)
+  - [src/stack.h](#srcstackh)
+  - [src/stack.c](#srcstackc)
+  - [src/ums.h](#srcumsh)
+  - [src/ums.c](#srcumsc)
+  - [src/user.h](#srcuserh)
+  - [src/user.c](#srcuserc)
+- [Output](#output)
+  - [output.txt](#outputtxt)
+  - [Screenchots](#screenchots)
+<!--toc:end-->
+
+# All files
 ```
 ├── input.txt
 ├── output.txt
@@ -22,7 +50,9 @@
     ├── user.c
     └── user.h
 ```
+<!-- <div class="page"/> -->
 
+# Code
 ## src/main.c
 ```C
 #include<stdio.h>
@@ -1066,4 +1096,251 @@ bool redo_action(User* u) {
     }
 }
 ```
+
+<div class="page"/>
+
+# Output
+## output.txt
+```
+enter the following code for the corresponding actions:
+    0 => exit
+    1 => print ums
+    2 => print user
+    3 => create user
+    4 => add text to user
+    5 => get text from user
+    6 => delete text from user
+    7 => delete user
+    8 => undo user action
+    9 => redo user action
+    _ => invalid opcode
+
+enter opcode: 1
+---
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+---
+
+enter opcode: 3
+enter username: amongesh
+
+enter opcode: 3
+enter username: joesh
+
+enter opcode: 1
+---
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ -> "amongesh": "94888300901328" ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ -> "joesh": "94888300904832" ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+---
+
+enter opcode: 7
+enter username: joesh
+
+enter opcode: 1
+---
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ -> "amongesh": "94888300901328" ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+ |-> [ ]
+---
+
+enter opcode: 4
+enter username: amongesh
+enter key for the text: text1
+enter text: this_is_text_1
+
+enter opcode: 2
+enter username: amongesh
+undo: [
+    added: { "text1": "this_is_text_1" }
+]
+redo: [
+]
+data: [
+    "text1": "this_is_text_1"
+]
+
+enter opcode: 5
+enter username: amongesh
+enter key for the text: text1
+the text is: "this_is_text_1"
+
+enter opcode: 6
+enter username: amongesh
+enter key for the text: text1
+
+enter opcode: 2
+enter username: amongesh
+undo: [
+    added: { "text1": "this_is_text_1" }
+    removed: { "text1": "this_is_text_1" }
+]
+redo: [
+]
+data: [
+]
+
+enter opcode: 8
+enter username: amongesh
+
+enter opcode: 2
+enter username: amongesh
+undo: [
+    added: { "text1": "this_is_text_1" }
+]
+redo: [
+    removed: { "text1": "this_is_text_1" }
+]
+data: [
+    "text1": "this_is_text_1"
+]
+
+enter opcode: 9
+enter username: amongesh
+
+enter opcode: 2
+enter username: amongesh
+undo: [
+    added: { "text1": "this_is_text_1" }
+    removed: { "text1": "this_is_text_1" }
+]
+redo: [
+]
+data: [
+]
+
+enter opcode: 8
+enter username: anomgesh
+user with the given username does not exist :/
+
+enter opcode: 0
+exitting
+
+```
+
+<div class="page"/>
+
+## Screenchots
+![out1](./screenshots/out1.png)
+
+![out2](./screenshots/out2.png)
+
+![out3](./screenshots/out3.png)
+
+![out4](./screenshots/out4.png)
 
