@@ -20,6 +20,10 @@ User* new_user() {
 }
 
 void print_user(User* u) {
+    if (u == NULL) {
+        printf("error: user is NULL\n");
+        return;
+    }
     printf("undo: ");
     print_stack(&(u->undo_stack));
     printf("redo: ");

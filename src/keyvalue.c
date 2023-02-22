@@ -23,6 +23,14 @@ void print_key(Key* k) {
     print_str(k->key, k->key_width);
 }
 
+void free_key(Key* k) {
+    if (k != NULL) {
+        free(k->key);
+        k->key = NULL;
+        k->key_width = 0;
+    }
+}
+
 
 
 void print_keyvalue(KeyValue* kv) {
@@ -74,7 +82,9 @@ KeyValue clone_keyvalue(KeyValue* kv) {
 
 void free_keyvalue(KeyValue* kv) {
     if (kv != NULL) {
-        free(kv->key.key);
+        free_key(&(kv->key));
         free(kv->value);
+        kv->value = NULL;
+        kv->value_width = 0;
     }
 }

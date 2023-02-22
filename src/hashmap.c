@@ -109,3 +109,14 @@ void print_hashmap(HashMap* m) {
     }
     printf("---\n");
 }
+
+void free_hashmap(HashMap* m) {
+    if (m != NULL) {
+        for (int i=0; i<m->size; i++) {
+            free_llist(&(m->data[i]));
+        }
+        free(m->data);
+        m->data = NULL;
+        m->size = 0;
+    }
+}

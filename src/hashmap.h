@@ -23,6 +23,7 @@ KeyValue* get_item_hashmap(HashMap* m, Key* k);
 void insert_element_hashmap(HashMap* m, KeyValue kv);
 bool delete_item_hashmap(HashMap* m, Key* k);
 void print_hashmap(HashMap* m);
+void free_hashmap(HashMap* m);
 
 
 #endif // HASHMAP_HEADER

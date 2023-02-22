@@ -24,6 +24,7 @@ LinkedList new_llist();
 bool insert_at_position_ll(LinkedList* a, int pos, KeyValue element);
 void insert_at_front_ll(LinkedList* a, KeyValue kv);
 void print_llist(LinkedList* a);
+void free_llist(LinkedList* a);
 
 
 #endif // LINKEDLIST_HEADER

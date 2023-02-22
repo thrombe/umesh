@@ -36,3 +36,9 @@ bool delete_user(UserManagementSystem* ums, Key* k) {
     return delete_item_hashmap(&(ums->users), k);
 }
 
+void free_ums(UserManagementSystem* ums) {
+    if (ums != NULL) {
+        free_hashmap(&(ums->users));
+    }
+}
+

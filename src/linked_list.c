@@ -5,9 +5,12 @@
 #include<stdlib.h>
 #include<stdio.h>
 
+// recursive
 void free_node(Node* n) {
     if (n != NULL) {
         free_keyvalue(&(n->val));
+        free_node(n->next);
+        n->next = NULL;
         free(n);
     }
 }
@@ -80,3 +83,11 @@ void print_llist(LinkedList* a) {
     }
     printf("]\n");
 }
+
+void free_llist(LinkedList* a) {
+    if (a != NULL) {
+        free_node(a->first);
+        a->first = NULL;
+    }
+}
+

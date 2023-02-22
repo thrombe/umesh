@@ -17,6 +17,7 @@ void insert_new_user(UserManagementSystem* ums, Key k);
 void print_ums(UserManagementSystem* ums);
 User* get_user(UserManagementSystem* ums, Key* k);
 bool delete_user(UserManagementSystem* ums, Key* k);
+void free_ums(UserManagementSystem* ums);
 
 
 #endif // UMS_HEADER
