@@ -20,7 +20,7 @@
     - [x] delete
     - [x] get
   - [x] seperate the code in multiple files
-  - [ ] deal with usage of ```Key``` and ```Key*``` as parameters
+  - [x] deal with usage of ```Key``` and ```Key*``` as parameters
     - [!] eliminate the use of ```Key*``` in parameters where not necessary as it is treated as Copy
-    - [ ] but maybe ```Key``` can be used to indicate if the function takes ownership
+    - [x] but maybe ```Key``` can be used to indicate if the function takes ownership
   - [!] check if clone_keyvalue safe
